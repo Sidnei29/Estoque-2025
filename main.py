@@ -3,6 +3,7 @@ import cmd
 from sqlalchemy import create_engine
 
 import app_categorias
+import app_produtos
 from config import read_config
 
 
@@ -18,6 +19,9 @@ if __name__ == '__main__':
         print("2. Adicionar categoria")
         print("3. Modificar categoria")
         print("4. Remover categoria")
+        print("5. Listar_produtos")
+        print("6. Adicionar_produto")
+        print("7. Remover_produto")
 
         print("0. Finalizar")
         opcao = input("Digite a opcao desejada:")
@@ -30,7 +34,12 @@ if __name__ == '__main__':
                 app_categorias.modificar(engine)
             case "4":
                 app_categorias.remover(engine)
-
+            case "5":
+                app_produtos.listar_produtos(engine)
+            case "6":
+                app_produtos.adicionar_produto(engine)
+            case "7":
+                app_produtos.remover_produtos(engine)
             case "0":
                 exit()
 
